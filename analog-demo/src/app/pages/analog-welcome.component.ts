@@ -1,48 +1,56 @@
 import { Component } from '@angular/core';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'analog-demo-analog-welcome',
-  
+
   styles: [
     `
       :host {
         font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-          'Noto Color Emoji';
+        'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
         display: flex;
         padding: 2rem 1rem 8rem;
         flex-direction: column;
         background: rgb(250 250 250);
         height: 100%;
       }
+
       a {
         color: inherit;
         text-decoration: inherit;
       }
+
       .main {
         margin: 0 auto;
         flex: 1 1 0;
       }
+
       .intro-section {
         padding-top: 1.5rem;
         padding-bottom: 2rem;
       }
+
       .intro-section > * + * {
         margin-top: 1.5rem;
       }
+
       @media (min-width: 768px) {
         .intro-section {
           padding-top: 2.5rem;
           padding-bottom: 3rem;
         }
       }
+
       @media (min-width: 1024px) {
         .intro-section {
           padding-top: 8rem;
           padding-bottom: 8rem;
         }
       }
+
       .intro-container {
         display: flex;
         flex-direction: column;
@@ -51,13 +59,15 @@ import { Component } from '@angular/core';
         align-items: center;
         max-width: 64rem;
       }
+
       .intro-logo {
         height: 3rem;
         width: 3rem;
       }
+
       .intro-badge {
         transition-property: color, background-color, border-color,
-          text-decoration-color, fill, stroke;
+        text-decoration-color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
         font-weight: 500;
@@ -67,6 +77,7 @@ import { Component } from '@angular/core';
         background-color: rgb(228 228 231);
         border-radius: 1rem;
       }
+
       .intro-heading {
         margin: 0;
         font-weight: 500;
@@ -78,21 +89,25 @@ import { Component } from '@angular/core';
           line-height: 1;
         }
       }
+
       @media (min-width: 768px) {
         .intro-heading {
           font-size: 3.75rem;
           line-height: 1;
         }
       }
+
       @media (min-width: 1024px) {
         .intro-heading {
           font-size: 4.5rem;
           line-height: 1;
         }
       }
+
       .intro-analog {
         color: #dd0031;
       }
+
       .intro-description {
         line-height: 1.5;
         max-width: 42rem;
@@ -105,12 +120,14 @@ import { Component } from '@angular/core';
           font-size: 1.25rem;
         }
       }
+
       .btn-container > * + * {
         margin-left: 1rem;
       }
+
       .darkBtn {
         transition-property: color, background-color, border-color,
-          text-decoration-color, fill, stroke;
+        text-decoration-color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
         color: rgb(250 250 250);
@@ -127,12 +144,14 @@ import { Component } from '@angular/core';
         cursor: pointer;
         display: inline-flex;
       }
+
       .darkBtn:hover {
         background-color: rgb(9 9 11 / 0.9);
       }
+
       .lightBtn {
         transition-property: color, background-color, border-color,
-          text-decoration-color, fill, stroke;
+        text-decoration-color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
         color: rgb(24, 24, 27);
@@ -150,9 +169,11 @@ import { Component } from '@angular/core';
         display: inline-flex;
         cursor: pointer;
       }
+
       .lightBtn:hover {
         background-color: rgb(244 244 245);
       }
+
       .counter-section {
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -171,6 +192,7 @@ import { Component } from '@angular/core';
           padding-bottom: 6rem;
         }
       }
+
       .counter-container {
         text-align: center;
         gap: 1rem;
@@ -182,6 +204,7 @@ import { Component } from '@angular/core';
         margin-left: auto;
         margin-right: auto;
       }
+
       .counter-heading {
         color: #dd0031;
         line-height: 1.1;
@@ -189,6 +212,7 @@ import { Component } from '@angular/core';
         font-size: 1.875rem;
         margin: 0;
       }
+
       .counter-description {
         line-height: 1.5;
         max-width: 85%;
@@ -201,6 +225,7 @@ import { Component } from '@angular/core';
           font-size: 1.125rem;
         }
       }
+
       .count {
         margin-left: 0.25rem;
         font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
@@ -220,7 +245,7 @@ import { Component } from '@angular/core';
             class="intro-badge"
             target="_blank"
             href="https://twitter.com/analogjs"
-            >Follow along on Twitter</a
+          >Follow along on Twitter</a
           >
           <h1 class="intro-heading">
             <span class="intro-analog">Analog.</span> The fullstack Angular
@@ -228,7 +253,7 @@ import { Component } from '@angular/core';
           </h1>
           <p class="intro-description">
             Analog is for building applications and websites with Angular.
-            <br />Powered by Vite.
+            <br/>Powered by Vite.
           </p>
           <div class="btn-container">
             <a class="darkBtn" href="https://analogjs.org">Read the docs</a>
@@ -237,12 +262,13 @@ import { Component } from '@angular/core';
               rel="noreferrer"
               class="lightBtn"
               href="https://github.com/analogjs/analog"
-              >Star on GitHub</a
+            >Star on GitHub</a
             >
+            <a routerLink="/eg" class="lightBtn">EG</a>
           </div>
         </div>
       </section>
-    <section id="counter-demo" class="section">
+      <section id="counter-demo" class="section">
         <div class="counter-container">
           <h2 class="counter-heading">Counter</h2>
           <p class="counter-description">
@@ -255,6 +281,9 @@ import { Component } from '@angular/core';
       </section>
     </main>
   `,
+  imports: [
+    RouterLink
+  ]
 })
 export class AnalogWelcomeComponent {
   count = 0;

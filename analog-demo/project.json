@@ -1,5 +1,5 @@
 {
-  "name": "Analog Demo",
+  "name": "analog-demo",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "targets": {

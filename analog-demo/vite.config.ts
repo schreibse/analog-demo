@@ -21,10 +21,14 @@ export default defineConfig(({ mode }) => {
       },
     },
     plugins: [
-      
-      
-      analog(),
-      
+      analog({
+        prerender: {
+          routes: [
+            '/',
+            '/eg'
+          ],
+        },
+      }),
       nxViteTsPaths(),
     ],
     test: {
