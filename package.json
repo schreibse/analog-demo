@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nx build analog-demo",
     "serve": "nx serve analog-demo",
-    "serve:static": "http-server ./dist/analog-demo/analog/public"
+    "serve:static": "http-server ./dist/analog-demo/analog/public -p 8080"
   },
   "private": true,
   "dependencies": {
