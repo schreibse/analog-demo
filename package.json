@@ -2,7 +2,11 @@
   "name": "@analog-demo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx build analog-demo",
+    "serve": "nx serve analog-demo",
+    "serve:static": "http-server ./dist/analog-demo/analog/public"
+  },
   "private": true,
   "dependencies": {
     "@analogjs/content": "^1.16.2",
@@ -38,6 +42,7 @@
     "@nx/eslint": "^21.0.0",
     "@nx/vite": "^21.0.0",
     "@nx/workspace": "21.1.2",
+    "http-server": "^14.1.1",
     "jsdom": "^22.1.0",
     "nx": "21.1.2",
     "typescript": "~5.7.0",
